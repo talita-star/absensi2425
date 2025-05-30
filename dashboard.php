@@ -22,11 +22,11 @@ $anggota_mpk = $conn->query("SELECT * FROM anggota_mpk");
 </head>
 <body>
 
-
 <footer class="text-center mt-0 py-0" style="background-color: DarkSlateGray; color: white;">
     IP Lokal : <?= $_SERVER['SERVER_ADDR'] ?><br>
     <?php echo 'IP Public : ' . file_get_contents('http://checkip.amazonaws.com'); ?>
 </footer>
+
 <?php include 'menu.php'; ?>
 
 <div class="container mt-4">
@@ -48,18 +48,20 @@ $anggota_mpk = $conn->query("SELECT * FROM anggota_mpk");
             </tr>
         </thead>
         <tbody>
-        <?php while($row = $siswa->fetch_assoc()): ?>
+        <?php while($row = $anggota_mpk->fetch_assoc()): ?>
         <tr>
             <td><?= htmlspecialchars($row['nama']) ?></td>
             <td><?= htmlspecialchars($row['kelas']) ?></td>
             <td><?= htmlspecialchars($row['divisi']) ?></td>
-            <td><img src="uploads/<?= $row['foto'] ?>" width="50"></td>
+            <td><img src="uploads/<?= htmlspecialchars($row['foto']) ?>" width="50" alt="Foto"></td>
         </tr>
         <?php endwhile; ?>
         </tbody>
     </table>
 </div>
 
+</body>
+</html>
 
 
 </body>
