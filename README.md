@@ -12,4 +12,4 @@ Kalau mau dipakai untuk setiap kegiatan,
 - **Username** = `mpk2425`  
 - **Password** = `123`
 
-✨STerima kasih! 🙏
+✨Terima kasih! 🙏
